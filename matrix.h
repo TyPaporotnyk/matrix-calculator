@@ -19,6 +19,7 @@ struct matrix{
     matrix(QTableWidget* _net, mSize _size);
 
     void build(mSize _size);
+    void clear();
 
     void sum(matrix m1, matrix m2);
     void substraction(matrix m1, matrix m2);

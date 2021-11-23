@@ -19,8 +19,11 @@ public:
 private slots:
 
     void on_buildMatrixButton_1_clicked();
-
     void on_buildMatrixButton_2_clicked();
+
+    void on_clearButton1_clicked();
+
+    void on_clearButton2_clicked();
 
 private:
     Ui::MainWindow *ui;

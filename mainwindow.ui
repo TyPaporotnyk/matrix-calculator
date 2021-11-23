@@ -35,27 +35,29 @@
        <height>211</height>
       </rect>
      </property>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>20</number>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>20</number>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>20</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>22</number>
+     </attribute>
     </widget>
     <widget class="QWidget" name="gridLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>20</x>
        <y>240</y>
-       <width>266</width>
+       <width>321</width>
        <height>41</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QSpinBox" name="spinBoxX_matrix_1">
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>12</number>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="2">
        <widget class="QPushButton" name="buildMatrixButton_1">
         <property name="text">
@@ -70,6 +72,23 @@
         </property>
         <property name="maximum">
          <number>12</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QSpinBox" name="spinBoxX_matrix_1">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>12</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="clearButton1">
+        <property name="text">
+         <string>Очистить</string>
         </property>
        </widget>
       </item>
@@ -101,23 +120,13 @@
     <widget class="QWidget" name="gridLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>20</x>
        <y>240</y>
-       <width>266</width>
+       <width>321</width>
        <height>41</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QSpinBox" name="spinBoxX_matrix_2">
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>12</number>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="2">
        <widget class="QPushButton" name="buildMatrixButton_2">
         <property name="text">
@@ -132,6 +141,23 @@
         </property>
         <property name="maximum">
          <number>12</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QSpinBox" name="spinBoxX_matrix_2">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>12</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="clearButton2">
+        <property name="text">
+         <string>Очистить</string>
         </property>
        </widget>
       </item>
