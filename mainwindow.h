@@ -22,14 +22,18 @@ private slots:
     void on_buildMatrixButton_2_clicked();
 
     void on_clearButton1_clicked();
-
     void on_clearButton2_clicked();
+
+    void on_calculateButton_clicked();
 
 private:
     Ui::MainWindow *ui;
 
     matrix m1;
     matrix m2;
+    matrix outputM;
+
+    QStringList itemsInComboBox;
 
 };
 #endif // MAINWINDOW_H

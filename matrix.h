@@ -2,6 +2,7 @@
 #define MATRIX_H
 
 #include <QTableWidget>
+#include <QLineEdit>
 
 struct mSize{
     mSize() {sizeX = 1; sizeY = 1;}
@@ -16,13 +17,18 @@ struct matrix{
     QTableWidget *net;
 
     matrix();
+    matrix(QTableWidget* _net);
     matrix(QTableWidget* _net, mSize _size);
 
     void build(mSize _size);
     void clear();
 
-    void sum(matrix m1, matrix m2);
-    void substraction(matrix m1, matrix m2);
+    void sum(QLineEdit* e, matrix m1, matrix m2);
+    void sub(QLineEdit* e , matrix m1, matrix m2);
+    void multyply(QLineEdit* e , matrix m1, matrix m2);
+    void multyplyOn(QLineEdit* e , matrix m1, float a);
+    void devideOn(QLineEdit* e , matrix m1, float a);
+
 
 };
 
