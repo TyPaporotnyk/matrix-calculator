@@ -24,6 +24,8 @@ struct matrix{
     void build(mSize _size);
     void clear();
 
+    void clone(matrix m);
+
     void baseOp(matrix m1, matrix m2, float(*f)(float a, float b));
     void arithmetikOp(float a, float(*f)(float a, float b));
     void multiply(matrix m1, matrix m2);

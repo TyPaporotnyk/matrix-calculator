@@ -1,7 +1,6 @@
 #include "matrix.h"
 
 #include <stdexcept>
-#include <qheaderview.h>
 #include <QString>
 
 float sum(float a, float b) { return a + b; }
@@ -208,4 +207,44 @@ float matrix::findDet(float** a, int n)
     }
 }
 
+void matrix::transpose()
+{
+    float a[size.sizeX][size.sizeY];
 
+    for(int i = 0; i < size.sizeY; i++)
+    {
+        for(int j = 0; j < size.sizeX; j++)
+        {
+            a[j][i] = net->item(i, j)->text().toFloat();
+        }
+    }
+
+    build(mSize(size.sizeY, size.sizeX));
+
+    for(int i = 0; i < size.sizeY; i++)
+    {
+        for(int j = 0; j < size.sizeX; j++)
+        {
+            net->item(i, j)->setText(QString::number(a[i][j]));
+        }
+    }
+}
+
+void matrix::convert()
+{
+
+}
+
+void matrix::clone(matrix m)
+{
+    size = m.size;
+    build(size);
+
+    for(int i = 0; i < size.sizeY; i++)
+    {
+        for(int j = 0; j < size.sizeX; j++)
+        {
+            net->item(j, i)->setText(m.net->item(j, i)->text());
+        }
+    }
+}

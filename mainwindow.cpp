@@ -64,12 +64,12 @@ void MainWindow::on_matrixButon_convert_1_clicked()
 
 void MainWindow::on_matrixButon_transpose_1_clicked()
 {
-
+    m1.transpose();
 }
 
 void MainWindow::on_matrixButon_determinant_1_clicked()
 {
-
+    m1.determinant();
 }
 
 void MainWindow::on_matrix_calc_1_clicked()
@@ -94,12 +94,12 @@ void MainWindow::on_matrixButon_convert_2_clicked()
 
 void MainWindow::on_matrixButon_transpose_2_clicked()
 {
-
+    m2.transpose();
 }
 
 void MainWindow::on_matrixButon_determinant_2_clicked()
 {
-
+    m2.determinant();
 }
 
 void MainWindow::on_matrix_calc_2_clicked()
@@ -114,5 +114,17 @@ void MainWindow::on_matrix_calc_2_clicked()
     {
         m2.arithmetikOp(ui->matrix_line_2->text().toFloat(), divide);
     }
+}
+
+
+// Clone
+void MainWindow::on_result_to_A_clicked()
+{
+    m1.clone(outputM);
+}
+
+void MainWindow::on_result_to_B_clicked()
+{
+    m2.clone(outputM);
 }
 
