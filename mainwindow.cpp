@@ -66,7 +66,7 @@ void MainWindow::on_calculateButton_clicked()
     }
     else if(selected == ("Определитель"))
     {
-        outputM.devideOn(ui->outputLine, m1, ui->numLine->text().toFloat());
+        m1.determinant(ui->outputLine);
     }
 
 }

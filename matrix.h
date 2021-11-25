@@ -28,7 +28,9 @@ struct matrix{
     void multiply(QLineEdit* e , matrix m1, matrix m2);
     void multiplyOn(QLineEdit* e , matrix m1, float a);
     void devideOn(QLineEdit* e , matrix m1, float a);
-
+    void determinant(QLineEdit* e);
+    void clearMemory(float** a, int n);
+    float findDet(float** a, int n);
 
 };
 
