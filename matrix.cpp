@@ -101,6 +101,27 @@ void matrix::sub(QLineEdit* e, matrix m1, matrix m2)
 void matrix::multiply(QLineEdit* e , matrix m1, matrix m2)
 {
     e->setText("");
+    if(m1.size.sizeY != m2.size.sizeX)
+    {
+        e->setText("Размеры матриц не совпадают");
+        return;
+    }
+
+    build(mSize(m1.size.sizeY, m2.size.sizeX));
+
+    for (int i = 0; i < m1.size.sizeY; i++)
+    {
+        for (int j = 0; j < m2.size.sizeX; j++)
+        {
+            float sum = 0;
+            for (int k = 0; k < m1.size.sizeX; k++)
+            {
+                sum += m1.net->item(i, k)->text().toFloat() * m2.net->item(k, j)->text().toFloat();
+            }
+            net->item(i,j)->setText(QString::number(sum));
+        }
+    }
+
 }
 
 void matrix::multiplyOn(QLineEdit* e , matrix m1, float a)
