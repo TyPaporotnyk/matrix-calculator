@@ -1,5 +1,6 @@
 #include "matrix.h"
 
+#include <stdexcept>
 #include <qheaderview.h>
 #include <QString>
 
@@ -56,7 +57,7 @@ void matrix::clear()
     }
 }
 
-void matrix::sum(QLineEdit* e, matrix m1, matrix m2)
+void matrix::baseOp(QLineEdit* e, matrix m1, matrix m2, float(*f)(float a, float b))
 {
     e->setText("");
     if(m1.size.sizeX != m2.size.sizeX || m1.size.sizeY != m2.size.sizeY)
@@ -71,29 +72,8 @@ void matrix::sum(QLineEdit* e, matrix m1, matrix m2)
     {
         for(int x = 0; x < size.sizeX; x++)
         {
-            net->item(y, x)->setText(QString::number(m1.net->item(y, x)->text().toInt() +
-                                                     m2.net->item(y, x)->text().toInt()));
-        }
-    }
-}
-
-void matrix::sub(QLineEdit* e, matrix m1, matrix m2)
-{
-    e->setText("");
-    if(m1.size.sizeX != m2.size.sizeX || m1.size.sizeY != m2.size.sizeY)
-    {
-        e->setText("Размеры матриц не совпадают");
-        return;
-    }
-
-    build(m1.size);
-
-    for(int y = 0; y < size.sizeY; y++)
-    {
-        for(int x = 0; x < size.sizeX; x++)
-        {
-            net->item(y, x)->setText(QString::number(m1.net->item(y, x)->text().toInt() -
-                                                     m2.net->item(y, x)->text().toInt()));
+            net->item(y, x)->setText(QString::number(f(m1.net->item(y, x)->text().toInt(),
+                                                       m2.net->item(y, x)->text().toInt())));
         }
     }
 }
@@ -124,7 +104,7 @@ void matrix::multiply(QLineEdit* e , matrix m1, matrix m2)
 
 }
 
-void matrix::multiplyOn(QLineEdit* e , matrix m1, float a)
+void matrix::arithmetikOp(QLineEdit* e , matrix m1, float a, float(*f)(float a, float b))
 {
     e->setText("");
     build(m1.size);
@@ -133,27 +113,13 @@ void matrix::multiplyOn(QLineEdit* e , matrix m1, float a)
     {
         for(int x = 0; x < size.sizeX; x++)
         {
-            net->item(y, x)->setText(QString::number(m1.net->item(y, x)->text().toInt() * a));
-        }
-    }
-}
-
-void matrix::devideOn(QLineEdit* e , matrix m1, float a)
-{
-    e->setText("");
-    if(a == 0)
-    {
-        e->setText("На ноль делить нельзя");
-        return;
-    }
-
-    build(m1.size);
-
-    for(int y = 0; y < size.sizeY; y++)
-    {
-        for(int x = 0; x < size.sizeX; x++)
-        {
-            net->item(y, x)->setText(QString::number(m1.net->item(y, x)->text().toInt() / a));
+            try
+            {
+            net->item(y, x)->setText(QString::number(f(m1.net->item(y, x)->text().toInt(), a)));
+            } catch(std::overflow_error ex)
+            {
+                e->setText(ex.what());
+            }
         }
     }
 }
@@ -228,4 +194,14 @@ float matrix::findDet(float** a, int n)
         }
         return d;
     }
+}
+
+float sum(float a, float b) { return a + b; }
+float sub(float a, float b) { return a - b; }
+float multi(float a, float b) { return a * b; }
+float divide(float a, float b)
+{
+    if (b == 0)
+            throw std::overflow_error("На ноль делить нельзя");
+    return a / b;
 }

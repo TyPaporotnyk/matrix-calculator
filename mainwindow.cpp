@@ -44,30 +44,30 @@ void MainWindow::on_calculateButton_clicked()
     outputM = matrix(ui->Matrix_3);
 
     QString selected = ui->optionsBox->currentText();
+
     if(selected == "Сложить")
     {
-        outputM.sum(ui->outputLine, m1, m2);
+        outputM.baseOp(ui->outputLine, m1, m2, sum);
     }
     else if(selected == ("Вычесть"))
     {
-        outputM.sub(ui->outputLine, m1, m2);
+        outputM.baseOp(ui->outputLine, m1, m2, sub);
+    }
+    else if(selected == ("Умножить на"))
+    {
+        outputM.arithmetikOp(ui->outputLine, m1, ui->numLine->text().toFloat(), multi);
+    }
+    else if(selected == ("Поделить на"))
+    {
+        outputM.arithmetikOp(ui->outputLine, m1, ui->numLine->text().toFloat(), divide);
     }
     else if(selected == ("Умножить"))
     {
         outputM.multiply(ui->outputLine, m1, m2);
     }
-    else if(selected == ("Умножить на"))
-    {
-        outputM.multiplyOn(ui->outputLine, m1, ui->numLine->text().toFloat());
-    }
-    else if(selected == ("Поделить на"))
-    {
-        outputM.devideOn(ui->outputLine, m1, ui->numLine->text().toFloat());
-    }
     else if(selected == ("Определитель"))
     {
         m1.determinant(ui->outputLine);
     }
-
 }
 
