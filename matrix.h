@@ -15,18 +15,21 @@ struct mSize{
 struct matrix{
     mSize size;
     QTableWidget *net;
+    QLineEdit* errLine;
 
     matrix();
-    matrix(QTableWidget* _net);
-    matrix(QTableWidget* _net, mSize _size);
+    matrix(QTableWidget* _net, QLineEdit* e);
+    matrix(QTableWidget* _net, QLineEdit* e, mSize _size);
 
     void build(mSize _size);
     void clear();
 
-    void baseOp(QLineEdit* e, matrix m1, matrix m2, float(*f)(float a, float b));
-    void arithmetikOp(QLineEdit* e , float a, float(*f)(float a, float b));
-    void multiply(QLineEdit* e , matrix m1, matrix m2);
-    void determinant(QLineEdit* e);
+    void baseOp(matrix m1, matrix m2, float(*f)(float a, float b));
+    void arithmetikOp(float a, float(*f)(float a, float b));
+    void multiply(matrix m1, matrix m2);
+    void determinant();
+    void transpose();
+    void convert();
     void clearMemory(float** a, int n);
     float findDet(float** a, int n);
 };

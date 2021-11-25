@@ -4,19 +4,32 @@
 #include <qheaderview.h>
 #include <QString>
 
+float sum(float a, float b) { return a + b; }
+float sub(float a, float b) { return a - b; }
+float multi(float a, float b) { return a * b; }
+float divide(float a, float b)
+{
+    if (b == 0)
+            throw std::overflow_error("На ноль делить нельзя");
+    return a / b;
+}
+
 matrix::matrix()
 {
 
 }
 
-matrix::matrix(QTableWidget* _net)
+matrix::matrix(QTableWidget* _net, QLineEdit* e)
 {
     net = _net;
+    errLine = e;
 }
 
-matrix::matrix(QTableWidget* _net, mSize _size)
+matrix::matrix(QTableWidget* _net,QLineEdit* e, mSize _size)
 {
+//    matrix(_net, e);
     net = _net;
+    errLine = e;
     build(_size);
 }
 
@@ -57,12 +70,12 @@ void matrix::clear()
     }
 }
 
-void matrix::baseOp(QLineEdit* e, matrix m1, matrix m2, float(*f)(float a, float b))
+void matrix::baseOp(matrix m1, matrix m2, float(*f)(float a, float b))
 {
-    e->setText("");
+    errLine->setText("");
     if(m1.size.sizeX != m2.size.sizeX || m1.size.sizeY != m2.size.sizeY)
     {
-        e->setText("Размеры матриц не совпадают");
+        errLine->setText("Размеры матриц не совпадают");
         return;
     }
 
@@ -78,12 +91,12 @@ void matrix::baseOp(QLineEdit* e, matrix m1, matrix m2, float(*f)(float a, float
     }
 }
 
-void matrix::multiply(QLineEdit* e , matrix m1, matrix m2)
+void matrix::multiply(matrix m1, matrix m2)
 {
-    e->setText("");
+    errLine->setText("");
     if(m1.size.sizeY != m2.size.sizeX)
     {
-        e->setText("Размеры матриц не совпадают");
+        errLine->setText("Размеры матриц не совпадают");
         return;
     }
 
@@ -104,9 +117,9 @@ void matrix::multiply(QLineEdit* e , matrix m1, matrix m2)
 
 }
 
-void matrix::arithmetikOp(QLineEdit* e , float a, float(*f)(float a, float b))
+void matrix::arithmetikOp(float a, float(*f)(float a, float b))
 {
-    e->setText("");
+    errLine->setText("");
 
     for(int y = 0; y < size.sizeY; y++)
     {
@@ -117,17 +130,17 @@ void matrix::arithmetikOp(QLineEdit* e , float a, float(*f)(float a, float b))
                 net->item(y, x)->setText(QString::number(f(net->item(y, x)->text().toInt(), a)));
             } catch(std::overflow_error ex)
             {
-                e->setText(ex.what());
+                errLine->setText(ex.what());
             }
         }
     }
 }
 
-void matrix::determinant(QLineEdit* e)
+void matrix::determinant()
 {
     if(size.sizeX != size.sizeY)
     {
-        e->setText("Не квадратная матрица");
+        errLine->setText("Не квадратная матрица");
         return;
     }
 
@@ -149,7 +162,7 @@ void matrix::determinant(QLineEdit* e)
     char str[100];
     sprintf(str, "Определитель равен: %5.2f", det);
 
-    e->setText(str);
+    errLine->setText(str);
 }
 
 void matrix::clearMemory(float** a, int n)
@@ -195,12 +208,4 @@ float matrix::findDet(float** a, int n)
     }
 }
 
-float sum(float a, float b) { return a + b; }
-float sub(float a, float b) { return a - b; }
-float multi(float a, float b) { return a * b; }
-float divide(float a, float b)
-{
-    if (b == 0)
-            throw std::overflow_error("На ноль делить нельзя");
-    return a / b;
-}
+
