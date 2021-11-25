@@ -40,6 +40,9 @@ void MainWindow::on_calculateButton_clicked()
 {
     outputM = matrix(ui->Matrix_3, ui->outputLine);
 
+    ui->result_to_A->setEnabled(true);
+    ui->result_to_B->setEnabled(true);
+
     QString selected = ui->optionsBox->currentText();
 
     if(selected == "Сложить")

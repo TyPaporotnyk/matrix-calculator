@@ -288,6 +288,9 @@
     </layout>
    </widget>
    <widget class="QPushButton" name="result_to_A">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -301,6 +304,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="result_to_B">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>650</x>
