@@ -5,7 +5,7 @@
 ![Version](https://img.shields.io/badge/C++-Solutions-blue.svg?style=flat&logo=c%2B%2B)
 
 
-**matrix calculator** - simple program for working with matrices
+**matrix calculator** - simple program for working with matrices. Allows you to add, subtract and multiply the matrix. Find determinant and inverse matrix. Multiply and divide a matrix by a number and solve linear matrix equations.
 
 ## Ui
 
