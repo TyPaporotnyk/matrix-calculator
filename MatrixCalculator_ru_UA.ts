@@ -5,104 +5,109 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="220"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="27"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="221"/>
-        <source>Матрица 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="64"/>
         <location filename="mainwindow.ui" line="133"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="222"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="225"/>
         <source>Построить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="108"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="224"/>
-        <source>Матрица 2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="mainwindow.ui" line="187"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="228"/>
         <source>-&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="180"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="227"/>
         <source>&lt;-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="27"/>
+        <source>A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="91"/>
         <location filename="mainwindow.ui" line="160"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="223"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="226"/>
         <source>Очистить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="236"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="230"/>
-        <source>Операции</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="251"/>
-        <location filename="mainwindow.ui" line="255"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="231"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="238"/>
-        <source>Сложить</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="260"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="232"/>
-        <source>Вычесть</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="265"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="233"/>
-        <source>Умножить</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="270"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="234"/>
-        <source>Умножить на</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="275"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="235"/>
-        <source>Поделить на</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="280"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="236"/>
-        <source>Определитель</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="288"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="239"/>
-        <source>Расчитать</source>
+        <location filename="mainwindow.ui" line="108"/>
+        <source>B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="203"/>
-        <location filename="build-MatrixCalculator-Qt_6_2_1_for_macOS-Debug/MatrixCalculator_autogen/include/ui_mainwindow.h" line="229"/>
-        <source>Итоговая матрица</source>
+        <source>Результат</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="329"/>
+        <location filename="mainwindow.ui" line="333"/>
+        <source>Сложить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="338"/>
+        <source>Вычесть</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="343"/>
+        <source>Умножить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="260"/>
+        <location filename="mainwindow.ui" line="264"/>
+        <location filename="mainwindow.ui" line="391"/>
+        <location filename="mainwindow.ui" line="395"/>
+        <source>Умножить на</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="269"/>
+        <location filename="mainwindow.ui" line="400"/>
+        <source>Поделить на</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="300"/>
+        <source>Результат -&gt; A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="313"/>
+        <source>Результат -&gt; B</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="284"/>
+        <location filename="mainwindow.ui" line="370"/>
+        <source>Определитель</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="277"/>
+        <location filename="mainwindow.ui" line="351"/>
+        <location filename="mainwindow.ui" line="408"/>
+        <source>Расчитать</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="246"/>
+        <location filename="mainwindow.ui" line="384"/>
+        <source>Транспонировать</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="239"/>
+        <location filename="mainwindow.ui" line="377"/>
+        <source>Обратить</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

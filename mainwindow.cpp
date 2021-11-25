@@ -5,9 +5,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);
 
-    for (int index = 0; index < ui->optionsBox->count(); index++)
-        itemsInComboBox << ui->optionsBox->itemText(index);
-
     m1 = matrix(ui->Matrix_1, mSize(ui->spinBoxX_matrix_1->value(), ui->spinBoxY_matrix_1->value()));
     m2 = matrix(ui->Matrix_2, mSize(ui->spinBoxX_matrix_2->value(), ui->spinBoxY_matrix_2->value()));
 
@@ -53,21 +50,69 @@ void MainWindow::on_calculateButton_clicked()
     {
         outputM.baseOp(ui->outputLine, m1, m2, sub);
     }
-    else if(selected == ("Умножить на"))
-    {
-        outputM.arithmetikOp(ui->outputLine, m1, ui->numLine->text().toFloat(), multi);
-    }
-    else if(selected == ("Поделить на"))
-    {
-        outputM.arithmetikOp(ui->outputLine, m1, ui->numLine->text().toFloat(), divide);
-    }
     else if(selected == ("Умножить"))
     {
         outputM.multiply(ui->outputLine, m1, m2);
     }
-    else if(selected == ("Определитель"))
+}
+
+// To matrix A
+void MainWindow::on_matrixButon_convert_1_clicked()
+{
+
+}
+
+void MainWindow::on_matrixButon_transpose_1_clicked()
+{
+
+}
+
+void MainWindow::on_matrixButon_determinant_1_clicked()
+{
+
+}
+
+void MainWindow::on_matrix_calc_1_clicked()
+{
+    QString selected = ui->matrix_operations_1->currentText();
+
+    if(selected == "Умножить на")
     {
-        m1.determinant(ui->outputLine);
+        m1.arithmetikOp(ui->outputLine, ui->matrix_line_1->text().toFloat(), multi);
+    }
+    else if(selected == ("Поделить на"))
+    {
+        m1.arithmetikOp(ui->outputLine, ui->matrix_line_1->text().toFloat(), divide);
+    }
+}
+
+// To matrix B
+void MainWindow::on_matrixButon_convert_2_clicked()
+{
+
+}
+
+void MainWindow::on_matrixButon_transpose_2_clicked()
+{
+
+}
+
+void MainWindow::on_matrixButon_determinant_2_clicked()
+{
+
+}
+
+void MainWindow::on_matrix_calc_2_clicked()
+{
+    QString selected = ui->matrix_operations_2->currentText();
+
+    if(selected == "Умножить на")
+    {
+        m2.arithmetikOp(ui->outputLine, ui->matrix_line_2->text().toFloat(), multi);
+    }
+    else if(selected == ("Поделить на"))
+    {
+        m2.arithmetikOp(ui->outputLine, ui->matrix_line_2->text().toFloat(), divide);
     }
 }
 

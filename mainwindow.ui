@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>911</width>
-    <height>691</height>
+    <height>651</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Матрица 1</string>
+     <string>A</string>
     </property>
     <widget class="QTableWidget" name="Matrix_1">
      <property name="geometry">
@@ -105,7 +105,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Матрица 2</string>
+     <string>B</string>
     </property>
     <widget class="QTableWidget" name="Matrix_2">
      <property name="geometry">
@@ -168,7 +168,7 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>40</y>
+      <y>50</y>
       <width>151</width>
       <height>101</height>
      </rect>
@@ -193,21 +193,21 @@
    <widget class="QGroupBox" name="outputMatrixBox">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>320</y>
-      <width>361</width>
+      <x>270</x>
+      <y>300</y>
+      <width>371</width>
       <height>251</height>
      </rect>
     </property>
     <property name="title">
-     <string>Итоговая матрица</string>
+     <string>Результат</string>
     </property>
     <widget class="QTableWidget" name="Matrix_3">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>341</width>
+       <width>351</width>
        <height>211</height>
       </rect>
      </property>
@@ -216,88 +216,207 @@
    <widget class="QLineEdit" name="outputLine">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>590</y>
-      <width>601</width>
+      <x>140</x>
+      <y>560</y>
+      <width>631</width>
       <height>31</height>
      </rect>
     </property>
    </widget>
-   <widget class="QGroupBox" name="operationsBox">
+   <widget class="QWidget" name="gridLayoutWidget_6">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>191</width>
+      <height>174</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_6">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="matrixButon_convert_1">
+       <property name="text">
+        <string>Обратить</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="matrixButon_transpose_1">
+       <property name="text">
+        <string>Транспонировать</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="matrix_line_1">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QComboBox" name="matrix_operations_1">
+       <property name="currentText">
+        <string>Умножить на</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Умножить на</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Поделить на</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="matrix_calc_1">
+       <property name="text">
+        <string>Расчитать</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="matrixButon_determinant_1">
+       <property name="text">
+        <string>Определитель</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="result_to_A">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>520</y>
+      <width>121</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Результат -&gt; A</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="result_to_B">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>520</y>
+      <width>121</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Результат -&gt; B</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_4">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>150</y>
+      <y>160</y>
       <width>151</width>
-      <height>141</height>
+      <height>71</height>
      </rect>
     </property>
-    <property name="title">
-     <string>Операции</string>
-    </property>
-    <widget class="QWidget" name="gridLayoutWidget_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>138</width>
-       <height>95</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="0" column="0">
-       <widget class="QComboBox" name="optionsBox">
-        <property name="currentText">
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="0" column="0">
+      <widget class="QComboBox" name="optionsBox">
+       <property name="currentText">
+        <string>Сложить</string>
+       </property>
+       <item>
+        <property name="text">
          <string>Сложить</string>
         </property>
-        <item>
-         <property name="text">
-          <string>Сложить</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Вычесть</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Умножить</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Умножить на</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Поделить на</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Определитель</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="calculateButton">
+       </item>
+       <item>
         <property name="text">
-         <string>Расчитать</string>
+         <string>Вычесть</string>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLineEdit" name="numLine">
-        <property name="enabled">
-         <bool>true</bool>
+       </item>
+       <item>
+        <property name="text">
+         <string>Умножить</string>
         </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="calculateButton">
+       <property name="text">
+        <string>Расчитать</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>300</y>
+      <width>191</width>
+      <height>174</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_7">
+     <item row="2" column="1">
+      <widget class="QPushButton" name="matrixButon_determinant_2">
+       <property name="text">
+        <string>Определитель</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="matrixButon_convert_2">
+       <property name="text">
+        <string>Обратить</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="matrixButon_transpose_2">
+       <property name="text">
+        <string>Транспонировать</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="matrix_operations_2">
+       <property name="currentText">
+        <string>Умножить на</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Умножить на</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Поделить на</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="matrix_calc_2">
+       <property name="text">
+        <string>Расчитать</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="matrix_line_2">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -24,7 +24,7 @@ struct matrix{
     void clear();
 
     void baseOp(QLineEdit* e, matrix m1, matrix m2, float(*f)(float a, float b));
-    void arithmetikOp(QLineEdit* e , matrix m1, float a, float(*f)(float a, float b));
+    void arithmetikOp(QLineEdit* e , float a, float(*f)(float a, float b));
     void multiply(QLineEdit* e , matrix m1, matrix m2);
     void determinant(QLineEdit* e);
     void clearMemory(float** a, int n);

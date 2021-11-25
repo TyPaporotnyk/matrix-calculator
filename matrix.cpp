@@ -104,10 +104,9 @@ void matrix::multiply(QLineEdit* e , matrix m1, matrix m2)
 
 }
 
-void matrix::arithmetikOp(QLineEdit* e , matrix m1, float a, float(*f)(float a, float b))
+void matrix::arithmetikOp(QLineEdit* e , float a, float(*f)(float a, float b))
 {
     e->setText("");
-    build(m1.size);
 
     for(int y = 0; y < size.sizeY; y++)
     {
@@ -115,7 +114,7 @@ void matrix::arithmetikOp(QLineEdit* e , matrix m1, float a, float(*f)(float a, 
         {
             try
             {
-            net->item(y, x)->setText(QString::number(f(m1.net->item(y, x)->text().toInt(), a)));
+                net->item(y, x)->setText(QString::number(f(net->item(y, x)->text().toInt(), a)));
             } catch(std::overflow_error ex)
             {
                 e->setText(ex.what());
