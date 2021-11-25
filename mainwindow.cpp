@@ -54,11 +54,11 @@ void MainWindow::on_calculateButton_clicked()
     }
     else if(selected == ("Умножить"))
     {
-        outputM.multyply(ui->outputLine, m1, m2);
+        outputM.multiply(ui->outputLine, m1, m2);
     }
     else if(selected == ("Умножить на"))
     {
-        outputM.multyplyOn(ui->outputLine, m1, ui->numLine->text().toFloat());
+        outputM.multiplyOn(ui->outputLine, m1, ui->numLine->text().toFloat());
     }
     else if(selected == ("Поделить на"))
     {

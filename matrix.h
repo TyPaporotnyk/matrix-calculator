@@ -25,8 +25,8 @@ struct matrix{
 
     void sum(QLineEdit* e, matrix m1, matrix m2);
     void sub(QLineEdit* e , matrix m1, matrix m2);
-    void multyply(QLineEdit* e , matrix m1, matrix m2);
-    void multyplyOn(QLineEdit* e , matrix m1, float a);
+    void multiply(QLineEdit* e , matrix m1, matrix m2);
+    void multiplyOn(QLineEdit* e , matrix m1, float a);
     void devideOn(QLineEdit* e , matrix m1, float a);
 
 

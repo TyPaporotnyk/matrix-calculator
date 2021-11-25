@@ -98,12 +98,12 @@ void matrix::sub(QLineEdit* e, matrix m1, matrix m2)
     }
 }
 
-void matrix::multyply(QLineEdit* e , matrix m1, matrix m2)
+void matrix::multiply(QLineEdit* e , matrix m1, matrix m2)
 {
     e->setText("");
 }
 
-void matrix::multyplyOn(QLineEdit* e , matrix m1, float a)
+void matrix::multiplyOn(QLineEdit* e , matrix m1, float a)
 {
     e->setText("");
     build(m1.size);
