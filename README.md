@@ -9,11 +9,7 @@
 
 ## Ui
 
-<<<<<<< HEAD
 <img src="https://github.com/TyPaporotnyk/matrix-calculator/blob/main/Docs/img/1.png" width="auto" max-width="600" height="auto" />
-=======
-<img src="https://github.com/TyPaporotnyk/matrix-calculator/blob/main/Docs/img/1.png" max-width="600" height="auto" />
->>>>>>> 0a3639cdd00be34f1c6a7ddc9d8101671ccbd719
 
 ## Install
 
