@@ -117,7 +117,7 @@ void MainWindow::on_matrix_calc_2_clicked()
 }
 
 
-// Clone
+// Moving
 void MainWindow::on_result_to_A_clicked()
 {
     m1.clone(outputM);
@@ -126,5 +126,17 @@ void MainWindow::on_result_to_A_clicked()
 void MainWindow::on_result_to_B_clicked()
 {
     m2.clone(outputM);
+}
+
+void MainWindow::on_toRight_clicked()
+{
+    m2.clone(m1);
+    m1.build(m1.size);
+}
+
+void MainWindow::on_toLeft_clicked()
+{
+    m1.clone(m2);
+    m2.build(m2.size);
 }
 

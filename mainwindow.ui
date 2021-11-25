@@ -168,16 +168,23 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>120</y>
+      <y>50</y>
       <width>151</width>
-      <height>61</height>
+      <height>101</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
      <item row="0" column="0">
       <widget class="QPushButton" name="toRight">
        <property name="text">
-        <string>&lt;--&gt;</string>
+        <string>-&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="toLeft">
+       <property name="text">
+        <string>&lt;-</string>
        </property>
       </widget>
      </item>
@@ -310,7 +317,7 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>40</y>
+      <y>160</y>
       <width>151</width>
       <height>71</height>
      </rect>

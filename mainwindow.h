@@ -38,9 +38,11 @@ private slots:
     void on_matrixButon_determinant_2_clicked();
     void on_matrix_calc_2_clicked();
 
+    // Moving
     void on_result_to_A_clicked();
-
     void on_result_to_B_clicked();
+    void on_toRight_clicked();
+    void on_toLeft_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -16,8 +16,8 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="180"/>
-        <source>&lt;--&gt;</source>
-        <oldsource>&lt;-</oldsource>
+        <source>-&gt;</source>
+        <oldsource>&lt;--&gt;</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -37,72 +37,77 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="196"/>
+        <location filename="mainwindow.ui" line="187"/>
+        <source>&lt;-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="203"/>
         <source>Результат</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="322"/>
-        <location filename="mainwindow.ui" line="326"/>
+        <location filename="mainwindow.ui" line="329"/>
+        <location filename="mainwindow.ui" line="333"/>
         <source>Сложить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="331"/>
+        <location filename="mainwindow.ui" line="338"/>
         <source>Вычесть</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="336"/>
+        <location filename="mainwindow.ui" line="343"/>
         <source>Умножить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="253"/>
-        <location filename="mainwindow.ui" line="257"/>
-        <location filename="mainwindow.ui" line="384"/>
-        <location filename="mainwindow.ui" line="388"/>
+        <location filename="mainwindow.ui" line="260"/>
+        <location filename="mainwindow.ui" line="264"/>
+        <location filename="mainwindow.ui" line="391"/>
+        <location filename="mainwindow.ui" line="395"/>
         <source>Умножить на</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="262"/>
-        <location filename="mainwindow.ui" line="393"/>
+        <location filename="mainwindow.ui" line="269"/>
+        <location filename="mainwindow.ui" line="400"/>
         <source>Поделить на</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="293"/>
+        <location filename="mainwindow.ui" line="300"/>
         <source>Результат -&gt; A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="306"/>
+        <location filename="mainwindow.ui" line="313"/>
         <source>Результат -&gt; B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="277"/>
-        <location filename="mainwindow.ui" line="363"/>
+        <location filename="mainwindow.ui" line="284"/>
+        <location filename="mainwindow.ui" line="370"/>
         <source>Определитель</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="270"/>
-        <location filename="mainwindow.ui" line="344"/>
-        <location filename="mainwindow.ui" line="401"/>
+        <location filename="mainwindow.ui" line="277"/>
+        <location filename="mainwindow.ui" line="351"/>
+        <location filename="mainwindow.ui" line="408"/>
         <source>Расчитать</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="246"/>
+        <location filename="mainwindow.ui" line="384"/>
+        <source>Транспонировать</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="239"/>
         <location filename="mainwindow.ui" line="377"/>
-        <source>Транспонировать</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="232"/>
-        <location filename="mainwindow.ui" line="370"/>
         <source>Обратить</source>
         <translation type="unfinished"></translation>
     </message>
