@@ -1,7 +1,7 @@
 # Matrix Calculator
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
-![Commits](https://img.shields.io/github/last-commit/TyPaporotnyk/Mandelbrot-set)
+![Commits](https://img.shields.io/github/last-commit/TyPaporotnyk/matrix-calculator)
 ![Version](https://img.shields.io/badge/C++-Solutions-blue.svg?style=flat&logo=c%2B%2B)
 
 
@@ -9,7 +9,7 @@
 
 ## Ui
 
-<img src="https://github.com/TyPaporotnyk/matrix-calculator/blob/main/Docs/img/1.png" width="320" height="200" />
+<img src="https://github.com/TyPaporotnyk/matrix-calculator/blob/main/Docs/img/1.png" width="auto" max-width="600" height="auto" />
 
 ## Install
 
