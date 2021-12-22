@@ -29,13 +29,11 @@ private slots:
     void on_calculateButton_clicked();
 
     // To matrix A
-    void on_matrixButon_convert_1_clicked();
     void on_matrixButon_transpose_1_clicked();
     void on_matrixButon_determinant_1_clicked();
     void on_matrix_calc_1_clicked();
 
     // To matrix B
-    void on_matrixButon_convert_2_clicked();
     void on_matrixButon_transpose_2_clicked();
     void on_matrixButon_determinant_2_clicked();
     void on_matrix_calc_2_clicked();

@@ -153,6 +153,24 @@ Matrix Matrix::operator/(double num)
     return mtr;
 }
 
+void Matrix::inverse()
+{
+//    if(width != height)
+//        throw std::overflow_error("Матриця повинна бути квадратною");
+
+//    double determinant = det();
+
+//    if(determinant == 0)
+//        throw std::overflow_error("Визначиник матрици дорівнює нулю");
+
+//    transpose();
+}
+
+void Matrix::algebraicСomplement()
+{
+
+}
+
 void Matrix::transpose()
 {
      Matrix mtr(width, height);

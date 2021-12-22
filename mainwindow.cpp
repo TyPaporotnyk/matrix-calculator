@@ -7,6 +7,10 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    m1.build(1,1);
+    m2.build(1,1);
+
     link.display(m1, ui->Matrix_1);
     link.display(m2, ui->Matrix_2);
 }
@@ -64,17 +68,17 @@ void MainWindow::on_calculateButton_clicked()
     QString selected = ui->optionsBox->currentText();
 
     try{
-        if(selected == "Сложить")
+        if(selected == "Скласти")
         {
             output = m1 + m2;
             link.display(output, ui->Matrix_3);
         }
-        else if(selected == ("Вычесть"))
+        else if(selected == ("Відняти"))
         {
             output = m1 - m2;
             link.display(output, ui->Matrix_3);
         }
-        else if(selected == ("Умножить"))
+        else if(selected == ("Помножити"))
         {
             output = m1 * m2;
             link.display(output, ui->Matrix_3);
@@ -90,10 +94,11 @@ void MainWindow::on_calculateButton_clicked()
 }
 
 // To matrix A
-void MainWindow::on_matrixButon_convert_1_clicked()
-{
 
-}
+//void MainWindow::on_matrixButon_convert_1_clicked()
+//{
+
+//}
 
 void MainWindow::on_matrixButon_transpose_1_clicked()
 {
@@ -125,12 +130,12 @@ void MainWindow::on_matrix_calc_1_clicked()
     double num = link.stringToNum(ui->matrix_line_1->text());
 
     try{
-        if(selected == "Умножить на")
+        if(selected == "Помножити на")
         {
             m1 = m1 * num;
             link.display(m1, ui->Matrix_1);
         }
-        else if(selected == ("Поделить на"))
+        else if(selected == ("Поділити на"))
         {
             m1 = m1 / num;
             link.display(m1, ui->Matrix_1);
@@ -141,10 +146,11 @@ void MainWindow::on_matrix_calc_1_clicked()
 }
 
 // To matrix B
-void MainWindow::on_matrixButon_convert_2_clicked()
-{
 
-}
+//void MainWindow::on_matrixButon_convert_2_clicked()
+//{
+
+//}
 
 void MainWindow::on_matrixButon_transpose_2_clicked()
 {
@@ -175,12 +181,12 @@ void MainWindow::on_matrix_calc_2_clicked()
     double num = link.stringToNum(ui->matrix_line_2->text());
 
     try{
-        if(selected == "Умножить на")
+        if(selected == "Помножити на")
         {
             m2 = m2 * num;
             link.display(m2, ui->Matrix_2);
         }
-        else if(selected == ("Поделить на"))
+        else if(selected == ("Поділити на"))
         {
             m2 = m2 / num;
             link.display(m2, ui->Matrix_2);

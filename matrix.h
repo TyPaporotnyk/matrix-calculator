@@ -11,6 +11,7 @@ private:
     double findDet(double **a, int n);
     void clearMemory(double **arr, int n);
 
+    void algebraicСomplement();
 public:
     ~Matrix();
     Matrix();
@@ -32,6 +33,8 @@ public:
 
     void transpose();
     double det();
+
+    void inverse();
 
     void build(int width, int height);
     void build(Matrix m);
