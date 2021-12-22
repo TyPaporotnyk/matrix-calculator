@@ -1,250 +1,254 @@
 #include "matrix.h"
-
 #include <stdexcept>
-#include <QString>
+#include <math.h>
 
-float sum(float a, float b) { return a + b; }
-float sub(float a, float b) { return a - b; }
-float multi(float a, float b) { return a * b; }
-float divide(float a, float b)
-{
-    if (b == 0)
-            throw std::overflow_error("На ноль делить нельзя");
-    return a / b;
-}
-
-matrix::matrix()
+Matrix::~Matrix()
 {
 
 }
 
-matrix::matrix(QTableWidget* _net, QLineEdit* e)
+Matrix::Matrix()
 {
-    net = _net;
-    errLine = e;
+    Matrix(1, 1);
 }
 
-matrix::matrix(QTableWidget* _net,QLineEdit* e, mSize _size)
+Matrix::Matrix(int _height, int _width) : height(_height), width(_width)
 {
-//    matrix(_net, e);
-    net = _net;
-    errLine = e;
-    build(_size);
+    build(width, height);
 }
 
-void matrix::build(mSize _size)
+Matrix::Matrix(int _height, int _width, double **_matrix)
 {
-    size = _size;
-
-    net->setColumnCount(size.sizeX);
-    net->setRowCount(size.sizeY);
-
-    net->horizontalHeader();
-
-    int width = (net->width() - 20) / size.sizeX;
-    int height = (net->height() - 20) / size.sizeY;
-
-    for(int y = 0; y < size.sizeY; y++)
+    matrix = new double*[height];
+    for(int i = 0; i < height; i++)
     {
-        for(int x = 0; x < size.sizeX; x++)
+        matrix[i] = new double[width];
+        for(int j = 0; j < width; j++)
         {
-           net->setColumnWidth(x, width);
-
-           net->setItem(y, x, new QTableWidgetItem("0"));
-           net->item(y,x)->setTextAlignment(Qt::AlignCenter);
-        }
-
-        net->setRowHeight(y, height);
-    }
-}
-
-void matrix::clear()
-{
-    for(int y = 0; y < size.sizeY; y++)
-    {
-        for(int x = 0; x < size.sizeX; x++)
-        {
-           net->item(y, x)->setText("0");
+            matrix[i][j] = _matrix[i][j];
         }
     }
 }
 
-void matrix::baseOp(matrix m1, matrix m2, float(*f)(float a, float b))
+void Matrix::build(int width, int height)
 {
-    errLine->setText("");
-    if(m1.size.sizeX != m2.size.sizeX || m1.size.sizeY != m2.size.sizeY)
-    {
-        errLine->setText("Размеры матриц не совпадают");
-        return;
-    }
+    this->width = width;
+    this->height = height;
 
-    build(m1.size);
-
-    for(int y = 0; y < size.sizeY; y++)
+    matrix = new double*[height];
+    for(int i = 0; i < height; i++)
     {
-        for(int x = 0; x < size.sizeX; x++)
+        matrix[i] = new double[width];
+        for(int j = 0; j < width; j++)
         {
-            net->item(y, x)->setText(QString::number(f(m1.net->item(y, x)->text().toInt(),
-                                                       m2.net->item(y, x)->text().toInt())));
+            matrix[i][j] = 0;
         }
     }
 }
 
-void matrix::multiply(matrix m1, matrix m2)
+void Matrix::build(Matrix m)
 {
-    errLine->setText("");
-    if(m1.size.sizeY != m2.size.sizeX)
+    width = m.width;
+    height = m.height;
+
+    matrix = new double*[height];
+    for(int i = 0; i < height; i++)
     {
-        errLine->setText("Размеры матриц не совпадают");
-        return;
+        matrix[i] = new double[width];
+        for(int j = 0; j < width; j++)
+        {
+            matrix[i][j] = m.matrix[i][j];
+        }
+    }
+}
+
+Matrix Matrix::operator+(const Matrix& m) const
+{
+    if(height != m.height || width != m.width)
+        throw std::overflow_error("Матриці різних розмірів");
+
+    Matrix mtr(height, width);
+
+    for(int i = 0; i < height; i++)
+    {
+        for(int j = 0; j < width; j++)
+        {
+            mtr.matrix[i][j] = matrix[i][j] + m.matrix[i][j];
+        }
     }
 
-    build(mSize(m1.size.sizeY, m2.size.sizeX));
+    return mtr;
+}
 
-    for (int i = 0; i < m1.size.sizeY; i++)
+Matrix Matrix::operator-(const Matrix& m) const
+{
+    if(height != m.height || width != m.width)
+        throw std::overflow_error("Матриці різних розмірів");
+
+    Matrix mtr(height, width);
+
+    for(int i = 0; i < height; i++)
     {
-        for (int j = 0; j < m2.size.sizeX; j++)
+        for(int j = 0; j < width; j++)
         {
-            float sum = 0;
-            for (int k = 0; k < m1.size.sizeX; k++)
+            mtr.matrix[i][j] = matrix[i][j] - m.matrix[i][j];
+        }
+    }
+
+    return mtr;
+}
+
+Matrix Matrix::operator*(const Matrix& m) const
+{
+    if(width != m.height)
+        throw std::overflow_error("X та Y матриц не співпадаюсь");
+
+    Matrix res(height, m.width);
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < m.width; j++)
+        {
+            res.matrix[i][j] = 0;
+            for (int k = 0; k < width; k++)
             {
-                sum += m1.net->item(i, k)->text().toFloat() * m2.net->item(k, j)->text().toFloat();
-            }
-            net->item(i,j)->setText(QString::number(sum));
-        }
-    }
-
-}
-
-void matrix::arithmetikOp(float a, float(*f)(float a, float b))
-{
-    errLine->setText("");
-
-    for(int y = 0; y < size.sizeY; y++)
-    {
-        for(int x = 0; x < size.sizeX; x++)
-        {
-            try
-            {
-                net->item(y, x)->setText(QString::number(f(net->item(y, x)->text().toInt(), a)));
-            } catch(std::overflow_error ex)
-            {
-                errLine->setText(ex.what());
+                res.matrix[i][j] += matrix[i][k] * m.matrix[k][j];
             }
         }
     }
+
+    return res;
 }
 
-void matrix::determinant()
+Matrix Matrix::operator*(double num)
 {
-    if(size.sizeX != size.sizeY)
+    Matrix mtr(height, width);
+
+    for(int i = 0; i < height; i++)
     {
-        errLine->setText("Не квадратная матрица");
-        return;
+        for(int j = 0; j < width; j++)
+        {
+            mtr.matrix[i][j] = matrix[i][j] * num;
+        }
     }
 
-    float **arr = new float*[size.sizeY];
+    return mtr;
+}
+
+Matrix Matrix::operator/(double num)
+{
+    if(num == 0)
+        throw std::overflow_error("На нуль ділити не можна");
+
+    Matrix mtr(height, width);
+
+    for(int i = 0; i < height; i++)
+    {
+        for(int j = 0; j < width; j++)
+        {
+            mtr.matrix[i][j] = matrix[i][j] / num;
+        }
+    }
+
+    return mtr;
+}
+
+void Matrix::transpose()
+{
+     Matrix mtr(width, height);
+     for(size_t i = 0; i < height; i++)
+     {
+        for(size_t j = 0; j < width; j++)
+        {
+            mtr.matrix[j][i] = matrix[i][j];
+        }
+     }
+
+     build(mtr);
+
+//     delete mtr;
+}
+
+double Matrix::det()
+{
+    if(width != height)
+        throw std::overflow_error("Матриця повинна бути квадратною");
+
+    double **arr = new double*[height];
     int n = 0;
 
-    for(int i = 0; i < size.sizeX; i++)
+    for(int i = 0; i < height; i++)
     {
         n++;
-        arr[i] = new float[size.sizeY];
-        for(int j = 0; j < size.sizeX; j++)
+        arr[i] = new double[width];
+        for(int j = 0; j < width; j++)
         {
-            arr[i][j] = net->item(i,j)->text().toFloat();
+            arr[i][j] = matrix[i][j];
         }
     }
+    double num = findDet(arr, n);
 
-    float det = findDet(arr, n);
+    for (int i = 0; i < n; i++)
+    {
+        delete[] arr[i];
+    }
+    delete [] arr;
 
-    char str[100];
-    sprintf(str, "Определитель равен: %5.2f", det);
-
-    errLine->setText(str);
+    return num;
 }
 
-void matrix::clearMemory(float** a, int n)
+double Matrix::findDet(double **a, int n)
+{
+    if (n == 1)
+            return a[0][0];
+        else if (n == 2)
+            return a[0][0] * a[1][1] - a[0][1] * a[1][0];
+        else
+        {
+            int d = 0;
+            for (int k = 0; k < n; k++)
+            {
+                double** m = new double*[n-1];
+                for (int i = 0; i < n - 1; i++)
+                {
+                    m[i] = new double[n - 1];
+                }
+                for (int i = 1; i < n; i++)
+                {
+                    int t = 0;
+                    for (int j = 0; j < n; j++)
+                    {
+                        if (j == k)
+                            continue;
+                        m[i-1][t] = a[i][j];
+                        t++;
+                    }
+                }
+                d += pow(-1, k + 2) * a[0][k] * findDet(m, n - 1);
+                clearMemory(m, n - 1);
+            }
+            return d;
+        }
+}
+
+void Matrix::clearMemory(double **arr, int n)
 {
     for (int i = 0; i < n; i++)
     {
-        delete[] a[i];
+        delete[] arr[i];
     }
-    delete [] a;
+    delete [] arr;
 }
 
-float matrix::findDet(float** a, int n)
+double** Matrix::getMatrix()
 {
-    if (n == 1)
-        return a[0][0];
-    else if (n == 2)
-        return a[0][0] * a[1][1] - a[0][1] * a[1][0];
-    else
-    {
-        int d = 0;
-        for (int k = 0; k < n; k++)
-        {
-            float** m = new float*[n-1];
-            for (int i = 0; i < n - 1; i++)
-            {
-                m[i] = new float[n - 1];
-            }
-            for (int i = 1; i < n; i++)
-            {
-                int t = 0;
-                for (int j = 0; j < n; j++)
-                {
-                    if (j == k)
-                        continue;
-                    m[i-1][t] = a[i][j];
-                    t++;
-                }
-            }
-            d += pow(-1, k + 2) * a[0][k] * findDet(m, n - 1);
-            clearMemory(m, n - 1);
-        }
-        return d;
-    }
+    return matrix;
 }
-
-void matrix::transpose()
+int Matrix::getWidth()
 {
-    float a[size.sizeX][size.sizeY];
-
-    for(int i = 0; i < size.sizeY; i++)
-    {
-        for(int j = 0; j < size.sizeX; j++)
-        {
-            a[j][i] = net->item(i, j)->text().toFloat();
-        }
-    }
-
-    build(mSize(size.sizeY, size.sizeX));
-
-    for(int i = 0; i < size.sizeY; i++)
-    {
-        for(int j = 0; j < size.sizeX; j++)
-        {
-            net->item(i, j)->setText(QString::number(a[i][j]));
-        }
-    }
+    return width;
 }
-
-void matrix::convert()
+int Matrix::getHeight()
 {
-
-}
-
-void matrix::clone(matrix m)
-{
-    size = m.size;
-    build(size);
-
-    for(int i = 0; i < size.sizeY; i++)
-    {
-        for(int j = 0; j < size.sizeX; j++)
-        {
-            net->item(j, i)->setText(m.net->item(j, i)->text());
-        }
-    }
+    return height;
 }

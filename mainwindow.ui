@@ -61,12 +61,12 @@
       <item row="0" column="2">
        <widget class="QPushButton" name="buildMatrixButton_1">
         <property name="text">
-         <string>Построить</string>
+         <string>Побудувати</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QSpinBox" name="spinBoxY_matrix_1">
+       <widget class="QSpinBox" name="spinBoxX_matrix_1">
         <property name="minimum">
          <number>1</number>
         </property>
@@ -76,7 +76,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QSpinBox" name="spinBoxX_matrix_1">
+       <widget class="QSpinBox" name="spinBoxY_matrix_1">
         <property name="minimum">
          <number>1</number>
         </property>
@@ -88,7 +88,7 @@
       <item row="0" column="3">
        <widget class="QPushButton" name="clearButton1">
         <property name="text">
-         <string>Очистить</string>
+         <string>Очистити</string>
         </property>
        </widget>
       </item>
@@ -130,12 +130,12 @@
       <item row="0" column="2">
        <widget class="QPushButton" name="buildMatrixButton_2">
         <property name="text">
-         <string>Построить</string>
+         <string>Побудувати</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QSpinBox" name="spinBoxY_matrix_2">
+       <widget class="QSpinBox" name="spinBoxX_matrix_2">
         <property name="minimum">
          <number>1</number>
         </property>
@@ -145,7 +145,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QSpinBox" name="spinBoxX_matrix_2">
+       <widget class="QSpinBox" name="spinBoxY_matrix_2">
         <property name="minimum">
          <number>1</number>
         </property>
@@ -157,7 +157,7 @@
       <item row="0" column="3">
        <widget class="QPushButton" name="clearButton2">
         <property name="text">
-         <string>Очистить</string>
+         <string>Очистити</string>
         </property>
        </widget>
       </item>
@@ -236,14 +236,14 @@
      <item row="0" column="0">
       <widget class="QPushButton" name="matrixButon_convert_1">
        <property name="text">
-        <string>Обратить</string>
+        <string>Обернути</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
       <widget class="QPushButton" name="matrixButon_transpose_1">
        <property name="text">
-        <string>Транспонировать</string>
+        <string>Транспонувати</string>
        </property>
       </widget>
      </item>
@@ -274,14 +274,14 @@
      <item row="4" column="0">
       <widget class="QPushButton" name="matrix_calc_1">
        <property name="text">
-        <string>Расчитать</string>
+        <string>Розрахувати</string>
        </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QPushButton" name="matrixButon_determinant_1">
        <property name="text">
-        <string>Определитель</string>
+        <string>Визначник</string>
        </property>
       </widget>
      </item>
@@ -354,7 +354,7 @@
      <item row="1" column="0">
       <widget class="QPushButton" name="calculateButton">
        <property name="text">
-        <string>Расчитать</string>
+        <string>Розрахувати</string>
        </property>
       </widget>
      </item>
@@ -373,21 +373,21 @@
      <item row="2" column="1">
       <widget class="QPushButton" name="matrixButon_determinant_2">
        <property name="text">
-        <string>Определитель</string>
+        <string>Визначиник</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QPushButton" name="matrixButon_convert_2">
        <property name="text">
-        <string>Обратить</string>
+        <string>Обернути</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
       <widget class="QPushButton" name="matrixButon_transpose_2">
        <property name="text">
-        <string>Транспонировать</string>
+        <string>Транспонувати</string>
        </property>
       </widget>
      </item>
@@ -411,7 +411,7 @@
      <item row="4" column="1">
       <widget class="QPushButton" name="matrix_calc_2">
        <property name="text">
-        <string>Расчитать</string>
+        <string>Розрахувати</string>
        </property>
       </widget>
      </item>
