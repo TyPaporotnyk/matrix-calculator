@@ -30,8 +30,12 @@ void Linker::netToMatrix(QTableWidget *net, Matrix& m)
     {
         for(int j = 0; j < m.getWidth(); j++)
         {
-            std::string str = net->item(i, j)->text().toStdString();
-            m.getMatrix()[i][j] = std::atof(str.c_str());
+            m.getMatrix()[i][j] = stringToNum(net->item(i, j)->text());
         }
     }
+}
+
+double Linker::stringToNum(QString str)
+{
+    return std::atof(str.toStdString().c_str());
 }
