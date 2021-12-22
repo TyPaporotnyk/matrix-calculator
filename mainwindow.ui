@@ -366,7 +366,11 @@
      <item row="1" column="1">
       <widget class="QPushButton" name="matrixButon_determinant_2">
        <property name="text">
+<<<<<<< HEAD
         <string>Визначник</string>
+=======
+        <string>Визначиник</string>
+>>>>>>> bfb07d38ea80b23111c078f4a660c91f0d80f5fa
        </property>
       </widget>
      </item>
