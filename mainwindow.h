@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidget>
 #include "matrix.h"
+#include "Linker.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -47,8 +49,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    matrix m1;
-    matrix m2;
-    matrix outputM;
+    Linker link;
+
+    Matrix m1;
+    Matrix m2;
+    Matrix output;
 };
 #endif // MAINWINDOW_H

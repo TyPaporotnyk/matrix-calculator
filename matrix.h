@@ -1,44 +1,30 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-#include <QTableWidget>
-#include <QLineEdit>
+class Matrix {
 
-struct mSize{
-    mSize() {sizeX = 1; sizeY = 1;}
-    mSize(int _sizeX, int _sizeY) {sizeX = _sizeX; sizeY = _sizeY;}
+private:
+    double **matrix;
+    int width;
+    int height;
 
-    int sizeX;
-    int sizeY;
-};
+public:
 
-struct matrix{
-    mSize size;
-    QTableWidget *net;
-    QLineEdit* errLine;
+    Matrix();
+    Matrix(int _height, int _width);
+    Matrix(int _height, int _width, double **_matrix);
 
-    matrix();
-    matrix(QTableWidget* _net, QLineEdit* e);
-    matrix(QTableWidget* _net, QLineEdit* e, mSize _size);
+    double** getMatrix();
+    int getWidth();
+    int getHeight();
 
-    void build(mSize _size);
-    void clear();
+    Matrix operator+(const Matrix& m) const;
+    Matrix operator-(const Matrix& m) const;
+    Matrix operator*(const Matrix& m) const;
 
-    void clone(matrix m);
-
-    void baseOp(matrix m1, matrix m2, float(*f)(float a, float b));
-    void arithmetikOp(float a, float(*f)(float a, float b));
-    void multiply(matrix m1, matrix m2);
-    void determinant();
     void transpose();
-    void convert();
-    void clearMemory(float** a, int n);
-    float findDet(float** a, int n);
-};
 
-float sum(float a, float b);
-float sub(float a, float b);
-float multi(float a, float b);
-float divide(float a, float b);
+    void build(int width, int height);
+};
 
 #endif // MATRIX_H

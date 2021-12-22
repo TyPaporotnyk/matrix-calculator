@@ -66,7 +66,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QSpinBox" name="spinBoxY_matrix_1">
+       <widget class="QSpinBox" name="spinBoxX_matrix_1">
         <property name="minimum">
          <number>1</number>
         </property>
@@ -76,7 +76,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QSpinBox" name="spinBoxX_matrix_1">
+       <widget class="QSpinBox" name="spinBoxY_matrix_1">
         <property name="minimum">
          <number>1</number>
         </property>
@@ -135,7 +135,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QSpinBox" name="spinBoxY_matrix_2">
+       <widget class="QSpinBox" name="spinBoxX_matrix_2">
         <property name="minimum">
          <number>1</number>
         </property>
@@ -145,7 +145,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QSpinBox" name="spinBoxX_matrix_2">
+       <widget class="QSpinBox" name="spinBoxY_matrix_2">
         <property name="minimum">
          <number>1</number>
         </property>

@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
         mainwindow.ui
         matrix.cpp
         matrix.h
+        Linker.cpp
+        Linker.h
         ${TS_FILES}
 )
 
